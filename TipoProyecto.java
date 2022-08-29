@@ -1,0 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.projectovialgchu.Domain;
+
+/**
+ *
+ * @author Tincho
+ */
+public class TipoProyecto {
+    TipoDeProyecto tipo;
+    String descripcion;
+    String actividades;
+    String insumos;
+
+    public TipoProyecto(TipoDeProyecto tipo, String descripcion, String actividades, String insumos) {
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+        this.actividades = actividades;
+        this.insumos = insumos;
+    }
+
+    public TipoDeProyecto getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoDeProyecto tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getActividades() {
+        return actividades;
+    }
+
+    public void setActividades(String actividades) {
+        this.actividades = actividades;
+    }
+
+    public String getInsumos() {
+        return insumos;
+    }
+
+    public void setInsumos(String insumos) {
+        this.insumos = insumos;
+    }
+    
+    
+    
+}
