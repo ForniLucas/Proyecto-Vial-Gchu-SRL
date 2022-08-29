@@ -12,6 +12,6 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl;
 public class ProyectoVialGchuSRL {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Hello lucas!");
     }
 }
