@@ -138,6 +138,6 @@ public class Empleado {
         this.FechaNac=unEmpleado.FechaNac;
         this.Telefono= unEmpleado.Telefono;
         
-        
+        }
 }
-    }
+    
