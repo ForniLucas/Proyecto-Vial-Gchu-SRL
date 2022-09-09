@@ -85,10 +85,9 @@ public class Proyecto {
         return this.tipodeProyecto;
     }
     
-    public void asignarTipoProyecto (TipoDeProyecto tipo, String descripcion, String actividades, String insumos){
-         TipoProyecto t_d_p = new TipoProyecto(tipo, descripcion, actividades, insumos);
+    public void asignarTipoProyecto (TipoProyecto unTipoProyecto){
          
-         this.tipodeProyecto = t_d_p;
+         this.tipodeProyecto = unTipoProyecto;
     }
     
     
