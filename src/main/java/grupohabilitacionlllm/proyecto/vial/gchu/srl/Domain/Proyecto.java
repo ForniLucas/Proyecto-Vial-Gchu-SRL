@@ -6,26 +6,41 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
 
 import java.time.LocalDate;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
  * @author Tincho
  */
 public class Proyecto {
+    int idProyecto;
     LocalDate fechaInicio;
     LocalDate fechaEstmiadaFin;
     LocalDate fechaFin;
     String estado;
     String nombre;
+    TipoProyecto tipodeProyecto; 
+    List<Empleado> empleados;
+    List<Maquinaria> maquinas;
 
-    public Proyecto(LocalDate fechaInicio, LocalDate fechaEstmiadaFin, LocalDate fechaFin, String estado, String nombre) {
+    public Proyecto(int id ,LocalDate fechaInicio, LocalDate fechaEstmiadaFin, LocalDate fechaFin, String estado, String nombre) {
         this.fechaInicio = fechaInicio;
         this.fechaEstmiadaFin = fechaEstmiadaFin;
         this.fechaFin = fechaFin;
         this.estado = estado;
         this.nombre = nombre;
+        this.idProyecto = id;
+        
+        empleados = new LinkedList<>();
+        maquinas = new LinkedList<>();
     }
 
+    
+    public int getId(){
+        return this.idProyecto;
+    }
+    
     public LocalDate getFechaInicio() {
         return fechaInicio;
     }
@@ -66,6 +81,33 @@ public class Proyecto {
         this.nombre = nombre;
     }
     
+    public TipoProyecto getTipoProyecto(){
+        return this.tipodeProyecto;
+    }
+    
+    public void asignarTipoProyecto (TipoDeProyecto tipo, String descripcion, String actividades, String insumos){
+         TipoProyecto t_d_p = new TipoProyecto(tipo, descripcion, actividades, insumos);
+         
+         this.tipodeProyecto = t_d_p;
+    }
+    
+    
+    public void asignarEmpleado(Empleado unEmpleado){
+        empleados.add(unEmpleado);
+    }
+
+    public List<Empleado> getEmpleados(){
+        return empleados;
+    }
+    
+    
+    public void asignar(Maquinaria unaMaquinaria){
+        maquinas.add(unaMaquinaria);
+    }
+    
+    public List<Maquinaria> getMaquinas() {
+        return maquinas;
+    }
     
     
 }
