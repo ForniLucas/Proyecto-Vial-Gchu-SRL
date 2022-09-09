@@ -125,6 +125,7 @@ public class Empleado {
     }
     
     
+   
     public void finalizarEspecializacion(LocalDate unDia){
         this.Especializacion.fechaFin=unDia;
     }
@@ -140,10 +141,3 @@ public class Empleado {
         
 }
     }
-    
-    public void }
-}
-
-
-
-
