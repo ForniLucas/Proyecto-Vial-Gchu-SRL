@@ -14,10 +14,20 @@ public class ElementoDeSeguridad {
 
     Elemento tipo;
     LocalDate fechaEntrega;
+    Empleado Empleado;
 
-    public ElementoDeSeguridad(Elemento tipo, LocalDate fechaEntrega) {
+    public ElementoDeSeguridad(Elemento tipo, LocalDate fechaEntrega,Empleado unEmpleado) {
         this.tipo = tipo;
         this.fechaEntrega = fechaEntrega;
+        this.Empleado= unEmpleado;
+    }
+
+    public Empleado getEmpleado() {
+        return Empleado;
+    }
+
+    public void setEmpleado(Empleado Empleado) {
+        this.Empleado = Empleado;
     }
 
     
