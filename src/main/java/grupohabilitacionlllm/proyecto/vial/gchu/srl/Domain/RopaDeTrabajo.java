@@ -9,17 +9,26 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Tincho
+ * @author Tilo
  */
 public class RopaDeTrabajo {
     Ropa tipo;
     short talle;
     LocalDate fechaEntrega;
+    Empleado Empleado; 
 
     public RopaDeTrabajo(Ropa tipo, short talle, LocalDate fechaEntrega) {
         this.tipo = tipo;
         this.talle = talle;
         this.fechaEntrega = fechaEntrega;
+    }
+
+    public Empleado getEmpleado() {
+        return Empleado;
+    }
+
+    public void setEmpleado(Empleado Empleado) {
+        this.Empleado = Empleado;
     }
 
     
