@@ -4,6 +4,9 @@
  */
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
+import java.util.LinkedList;
+import java.util.List;
+
 
 /**
  *
@@ -14,12 +17,17 @@ public class Maquinaria {
     String descripcion;
     String fabricante;
     String ubicacionAlmacenamiento; 
+    boolean dadoDeBaja;
+    List<Service> services;
 
     public Maquinaria(String codigo, String descripcion, String fabricante, String ubicacionAlmacenamiento) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.fabricante = fabricante;
         this.ubicacionAlmacenamiento = ubicacionAlmacenamiento;
+        this.dadoDeBaja = false;
+        
+        services = new LinkedList<>();
     }
 
     public String getCodigo() {
@@ -54,6 +62,35 @@ public class Maquinaria {
         this.ubicacionAlmacenamiento = ubicacionAlmacenamiento;
     }
     
+    public boolean getEstado(){
+        return this.dadoDeBaja;
+    }
     
+    public void setEstado_baja(){
+        if (getEstado()) {
+            this.dadoDeBaja = false;
+        }
+    }
     
+    public void setEstado_alta(){
+        if (!getEstado()) {
+            this.dadoDeBaja = true;
+        }
+    }    
+    
+    public void modificarMaquinaria(Maquinaria unaMaquinaria){
+        this.codigo = unaMaquinaria.codigo;
+        this.descripcion = unaMaquinaria.descripcion;
+        this.fabricante = unaMaquinaria.fabricante;
+        this.ubicacionAlmacenamiento = unaMaquinaria.ubicacionAlmacenamiento;
+        this.dadoDeBaja = unaMaquinaria.dadoDeBaja;
+    }
+    
+    public void asignarService(Service unservice){
+        services.add(unservice);
+    } 
+    
+    public List<Service> getServices(){
+        return this.services;
+    }
 }
