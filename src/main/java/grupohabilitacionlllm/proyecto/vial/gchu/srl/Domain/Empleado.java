@@ -22,14 +22,14 @@ public class Empleado {
     private Especializacion Especializacion;
     private boolean estado;
 
-    public Empleado(int idEmpleado, String Nombre, String Apellido, int dni, int Telefono, String direccion, LocalDate FechaNac) {
+    public Empleado(int idEmpleado, String nombre, String apellido, int dni, int telefono, String direccion, LocalDate fechaNac) {
         this.id= idEmpleado;
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
+        this.Nombre = nombre;
+        this.Apellido = apellido;
         this.dni = dni;
-        this.Telefono = Telefono;
+        this.Telefono = telefono;
         this.direccion = direccion;
-        this.FechaNac = FechaNac;
+        this.FechaNac = fechaNac;
         this.estado=true;
     }
 
