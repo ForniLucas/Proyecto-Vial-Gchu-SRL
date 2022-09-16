@@ -12,14 +12,14 @@ import java.time.LocalDate;
  */
 public class RopaDeTrabajo {
 
-    int iD;
+    int id;
     Ropa tipo;
     short talle;
     LocalDate fechaEntrega;
     Empleado Empleado;
 
     public RopaDeTrabajo(int id, Ropa tipo, short talle, LocalDate fechaEntrega) {
-        this.iD = id;
+        this.id = id;
         this.tipo = tipo;
         this.talle = talle;
         this.fechaEntrega = fechaEntrega;
@@ -38,7 +38,7 @@ public class RopaDeTrabajo {
     }
     
     public int getId(){
-        return iD;
+        return id;
     }
 
     public void setTipo(Ropa tipo) {
