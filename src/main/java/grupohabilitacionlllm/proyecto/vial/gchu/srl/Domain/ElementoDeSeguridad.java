@@ -11,15 +11,17 @@ import java.time.LocalDate;
  * @author lucas
  */
 public class ElementoDeSeguridad {
-
+    
+    int iD;
     Elemento tipo;
     LocalDate fechaEntrega;
     Empleado Empleado;
-
-    public ElementoDeSeguridad(Elemento tipo, LocalDate fechaEntrega,Empleado unEmpleado) {
+    
+    public ElementoDeSeguridad(int iD, Elemento tipo, LocalDate fechaEntrega, Empleado Empleado) {
+        this.iD = iD;
         this.tipo = tipo;
         this.fechaEntrega = fechaEntrega;
-        this.Empleado= unEmpleado;
+        this.Empleado = Empleado;
     }
 
     public Empleado getEmpleado() {
@@ -30,8 +32,10 @@ public class ElementoDeSeguridad {
         this.Empleado = Empleado;
     }
 
-    
-    
+    public int getiD() {
+        return iD;
+    }
+
     public Elemento getTipo() {
         return tipo;
     }

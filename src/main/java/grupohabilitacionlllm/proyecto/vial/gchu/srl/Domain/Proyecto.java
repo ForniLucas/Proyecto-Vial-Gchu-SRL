@@ -14,7 +14,7 @@ import java.util.List;
  * @author Tincho
  */
 public class Proyecto {
-    int idProyecto;
+    int id;
     LocalDate fechaInicio;
     LocalDate fechaEstmiadaFin;
     LocalDate fechaFin;
@@ -25,12 +25,12 @@ public class Proyecto {
     List<Maquinaria> maquinas;
 
     public Proyecto(int id ,LocalDate fechaInicio, LocalDate fechaEstmiadaFin, LocalDate fechaFin, String estado, String nombre) {
+        this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaEstmiadaFin = fechaEstmiadaFin;
         this.fechaFin = fechaFin;
         this.estado = estado;
         this.nombre = nombre;
-        this.idProyecto = id;
         
         empleados = new LinkedList<>();
         maquinas = new LinkedList<>();
@@ -38,7 +38,7 @@ public class Proyecto {
 
     
     public int getId(){
-        return this.idProyecto;
+        return id;
     }
     
     public LocalDate getFechaInicio() {
