@@ -13,7 +13,7 @@ import java.util.List;
  * @author Tincho
  */
 public class Maquinaria {
-    int Id;
+    int id;
     String codigo;
     String descripcion;
     String fabricante;
@@ -22,7 +22,7 @@ public class Maquinaria {
     List<Service> services;
 
     public Maquinaria(int idMaquinaria, String codigo, String descripcion, String fabricante, String ubicacionAlmacenamiento) {
-        this.Id=idMaquinaria;
+        this.id=idMaquinaria;
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.fabricante = fabricante;
