@@ -27,4 +27,21 @@ List<Empleado> empleados= new ArrayList<>();
         empleados.add(unEmpleado);
     
     }
+    
+    public void baja(Empleado unEmpleado){
+        empleados.remove(unEmpleado);
+    }
+    
+    public void bajaLogica(Empleado unEmpleado){
+        int index;
+        //for (Empleado emp_temp:empleados){
+          //  if (emp_temp.equals(unEmpleado)){
+                index= empleados.indexOf(unEmpleado);
+                empleados.get(index).setEstadoBaja();
+            //    empleados.
+           // }
+        }
+               // (if empleados.equals(unEmpleado{index=empleados.}));
+    }
+            
 }
