@@ -6,6 +6,7 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl.Controladores;
 
 import grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.Empleado;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
  */
 public class ControladorEmpleado {
 private int ids;
-List<Empleado> empleados;
+List<Empleado> empleados= new ArrayList<Empleado>();
 
     public ControladorEmpleado() {
         this.ids=1;
