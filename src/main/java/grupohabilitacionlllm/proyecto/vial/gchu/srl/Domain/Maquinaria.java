@@ -13,6 +13,7 @@ import java.util.List;
  * @author Tincho
  */
 public class Maquinaria {
+    //Identificador
     String codigo;
     String descripcion;
     String fabricante;
@@ -68,7 +69,7 @@ public class Maquinaria {
     
     public void setEstado_baja(){
         if (getEstado()) {
-            this.dadoDeBaja = false;
+            this.dadoDeBaja = false; // Cambiar nombre
         }
     }
     
