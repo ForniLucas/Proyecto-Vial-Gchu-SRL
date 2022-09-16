@@ -12,15 +12,17 @@ import java.time.LocalDate;
  */
 public class Trabajo {
     
-    int id;
+    int idProyecto;
+    int idEmpleado;
     int horasDeTrabajo;
     LocalDate fechaInicio; 
     LocalDate fechaEstFin;
     LocalDate fechaFin;
     
 
-    public Trabajo(int id, int horasDeTrabajo, LocalDate fechaInicio, LocalDate fechaEstFin, LocalDate fechaFin) {
-        this.id = id;
+    public Trabajo(int idP, int idE, int horasDeTrabajo, LocalDate fechaInicio, LocalDate fechaEstFin, LocalDate fechaFin) {
+        this.idProyecto = idP;
+        this.idEmpleado = idE;
         this.horasDeTrabajo = horasDeTrabajo;
         this.fechaInicio = fechaInicio;
         this.fechaEstFin = fechaEstFin;
@@ -39,8 +41,12 @@ public class Trabajo {
         return fechaEstFin;
     }
     
-    public int getId(){
-        return id;
+    public int getIdEmpleado(){
+        return idEmpleado;
+    }
+    
+    public int getIdProjecto(){
+        return idProyecto;
     }
 
     public LocalDate getFechaFin() {
