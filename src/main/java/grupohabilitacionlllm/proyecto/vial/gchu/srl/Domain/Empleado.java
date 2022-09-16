@@ -82,6 +82,10 @@ public class Empleado {
         return FechaNac;
     }
     
+    
+    
+    
+    
     public int getEdad() {
         return Period.between(FechaNac, LocalDate.now()).getYears(); 
     // Utilizamos la libreria Period de JAVA, que maneja tipos Date y obtubimos 
