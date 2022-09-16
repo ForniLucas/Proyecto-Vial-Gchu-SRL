@@ -12,7 +12,7 @@ import java.time.Period;
  * @author Tincho
  */
 public class Empleado {
-    private int IdEmpleado;
+    private int Id;
     private String Nombre;
     private String Apellido;
     private int dni;
@@ -23,7 +23,7 @@ public class Empleado {
     private boolean DadoDeBaja;
 
     public Empleado(int idEmpleado, String Nombre, String Apellido, int dni, int Telefono, String direccion, LocalDate FechaNac) {
-        this.IdEmpleado= idEmpleado;
+        this.Id= idEmpleado;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.dni = dni;
@@ -34,7 +34,7 @@ public class Empleado {
     }
 
     public int getidEmpleado(){
-        return this.IdEmpleado;
+        return this.Id;
     }
     
     
