@@ -13,20 +13,21 @@ import java.util.List;
  * @author Tincho
  */
 public class Maquinaria {
-    //Identificador
+    int Id;
     String codigo;
     String descripcion;
     String fabricante;
     String ubicacionAlmacenamiento; 
-    boolean dadoDeBaja;
+    boolean estado;
     List<Service> services;
 
-    public Maquinaria(String codigo, String descripcion, String fabricante, String ubicacionAlmacenamiento) {
+    public Maquinaria(int idMaquinaria, String codigo, String descripcion, String fabricante, String ubicacionAlmacenamiento) {
+        this.Id=idMaquinaria;
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.fabricante = fabricante;
         this.ubicacionAlmacenamiento = ubicacionAlmacenamiento;
-        this.dadoDeBaja = false;
+        this.estado = true;
         
         services = new LinkedList<>();
     }
@@ -64,18 +65,18 @@ public class Maquinaria {
     }
     
     public boolean getEstado(){
-        return this.dadoDeBaja;
+        return this.estado;
     }
     
-    public void setEstado_baja(){
+    public void setEstadoBaja(){
         if (getEstado()) {
-            this.dadoDeBaja = false; // Cambiar nombre
+            this.estado = false; // Cambiar nombre
         }
     }
     
-    public void setEstado_alta(){
+    public void setEstadoAlta(){
         if (!getEstado()) {
-            this.dadoDeBaja = true;
+            this.estado = true;
         }
     }    
     
@@ -84,7 +85,7 @@ public class Maquinaria {
         this.descripcion = unaMaquinaria.descripcion;
         this.fabricante = unaMaquinaria.fabricante;
         this.ubicacionAlmacenamiento = unaMaquinaria.ubicacionAlmacenamiento;
-        this.dadoDeBaja = unaMaquinaria.dadoDeBaja;
+        this.estado = unaMaquinaria.estado;
     }
     
     public void asignarService(Service unservice){
