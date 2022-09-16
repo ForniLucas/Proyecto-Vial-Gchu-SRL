@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ControladorEmpleado {
 private int ids;
-List<Empleado> empleados= new ArrayList<Empleado>();
+List<Empleado> empleados= new ArrayList<>();
 
     public ControladorEmpleado() {
         this.ids=1;
