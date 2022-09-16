@@ -36,9 +36,9 @@ List<Empleado> empleados= new ArrayList<>();
         int index;
         //for (Empleado emp_temp:empleados){
           //  if (emp_temp.equals(unEmpleado)){
-                index= empleados.indexOf(unEmpleado);
-                empleados.get(index).setEstadoBaja();
-            //    empleados.
+        index= empleados.indexOf(unEmpleado);
+        empleados.get(index).setEstadoBaja();
+      
            // }
         }
                // (if empleados.equals(unEmpleado{index=empleados.}));
