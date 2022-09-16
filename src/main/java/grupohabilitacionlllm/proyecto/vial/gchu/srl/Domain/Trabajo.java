@@ -11,13 +11,16 @@ import java.time.LocalDate;
  * @author Tincho
  */
 public class Trabajo {
+    
+    int id;
     int horasDeTrabajo;
     LocalDate fechaInicio; 
     LocalDate fechaEstFin;
     LocalDate fechaFin;
     
 
-    public Trabajo(int horasDeTrabajo, LocalDate fechaInicio, LocalDate fechaEstFin, LocalDate fechaFin) {
+    public Trabajo(int id, int horasDeTrabajo, LocalDate fechaInicio, LocalDate fechaEstFin, LocalDate fechaFin) {
+        this.id = id;
         this.horasDeTrabajo = horasDeTrabajo;
         this.fechaInicio = fechaInicio;
         this.fechaEstFin = fechaEstFin;
@@ -34,6 +37,10 @@ public class Trabajo {
 
     public LocalDate getFechaEstFin() {
         return fechaEstFin;
+    }
+    
+    public int getId(){
+        return id;
     }
 
     public LocalDate getFechaFin() {

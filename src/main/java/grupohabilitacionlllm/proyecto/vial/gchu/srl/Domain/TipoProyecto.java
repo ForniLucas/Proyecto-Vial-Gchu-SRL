@@ -9,12 +9,15 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
  * @author Tincho
  */
 public class TipoProyecto {
+    
+    int id;
     TipoDeProyecto tipo;
     String descripcion;
     String actividades;
     String insumos;
 
-    public TipoProyecto(TipoDeProyecto tipo, String descripcion, String actividades, String insumos) {
+    public TipoProyecto(int id, TipoDeProyecto tipo, String descripcion, String actividades, String insumos) {
+        this.id = id;
         this.tipo = tipo;
         this.descripcion = descripcion;
         this.actividades = actividades;

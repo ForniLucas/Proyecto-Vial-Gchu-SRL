@@ -12,11 +12,14 @@ import java.time.LocalDate;
  * @author Tincho
  */
 public class Service {
+    
+    int id;
     LocalDate fechaInicio;
     LocalDate fechaFin;
     String observaciones;
 
-    public Service(LocalDate fechaInicio, LocalDate fechaFin, String observaciones) {
+    public Service(int id, LocalDate fechaInicio, LocalDate fechaFin, String observaciones) {
+        this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.observaciones = observaciones;
@@ -32,6 +35,10 @@ public class Service {
 
     public LocalDate getFechaFin() {
         return fechaFin;
+    }
+    
+    public int getId(){
+        return id;
     }
 
     public void setFechaFin(LocalDate fechaFin) {

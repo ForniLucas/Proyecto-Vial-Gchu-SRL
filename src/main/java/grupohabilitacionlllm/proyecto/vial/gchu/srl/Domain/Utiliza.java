@@ -4,11 +4,14 @@ import java.time.LocalDate;
 
 
 public class Utiliza {
+    
+    int id;
     LocalDate fechaInicio;
     LocalDate fechaEstFin;
     LocalDate fechaFin;
 
-    public Utiliza(LocalDate fechaInicio, LocalDate fechaEstFin, LocalDate fechaFin) {
+    public Utiliza(int id, LocalDate fechaInicio, LocalDate fechaEstFin, LocalDate fechaFin) {
+        this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaEstFin = fechaEstFin;
         this.fechaFin = fechaFin;
@@ -26,6 +29,10 @@ public class Utiliza {
         return fechaFin;
     }
 
+    public int getId(){
+        return id; 
+    }
+    
     public void setFechaInicio(LocalDate fechaInicio) {
         this.fechaInicio = fechaInicio;
     }

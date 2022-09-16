@@ -4,7 +4,6 @@
  */
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
-
 import java.time.LocalDate;
 
 /**
@@ -12,12 +11,15 @@ import java.time.LocalDate;
  * @author Tilo
  */
 public class RopaDeTrabajo {
+
+    int iD;
     Ropa tipo;
     short talle;
     LocalDate fechaEntrega;
-    Empleado Empleado; 
+    Empleado Empleado;
 
-    public RopaDeTrabajo(Ropa tipo, short talle, LocalDate fechaEntrega) {
+    public RopaDeTrabajo(int id, Ropa tipo, short talle, LocalDate fechaEntrega) {
+        this.iD = id;
         this.tipo = tipo;
         this.talle = talle;
         this.fechaEntrega = fechaEntrega;
@@ -31,10 +33,12 @@ public class RopaDeTrabajo {
         this.Empleado = Empleado;
     }
 
-    
-    
     public Ropa getTipo() {
         return tipo;
+    }
+    
+    public int getId(){
+        return iD;
     }
 
     public void setTipo(Ropa tipo) {
@@ -56,7 +60,5 @@ public class RopaDeTrabajo {
     public void setFechaEntrega(LocalDate fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
     }
-    
-    
-    
+
 }

@@ -12,12 +12,15 @@ import java.time.LocalDate;
  * @author Tincho
  */
 public class Especializacion {
+    
+    int iD;
     Profesion tipo; 
     LocalDate fechaActualizacion; 
     RolEmpleado Rol; 
     LocalDate fechaFin;
 
-    public Especializacion(Profesion tipo, LocalDate fechaActualizacion, RolEmpleado Rol) {
+    public Especializacion(int id, Profesion tipo, LocalDate fechaActualizacion, RolEmpleado Rol) {
+        this.iD = id;
         this.tipo = tipo;
         this.fechaActualizacion = fechaActualizacion;
         this.Rol = Rol;
@@ -31,6 +34,10 @@ public class Especializacion {
         return fechaActualizacion;
     }
 
+    public int getId(){
+        return iD;
+    }
+    
     public RolEmpleado getRol() {
         return Rol;
     }
