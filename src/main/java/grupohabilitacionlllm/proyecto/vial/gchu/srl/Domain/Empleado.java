@@ -20,7 +20,7 @@ public class Empleado {
     private String direccion;
     private LocalDate FechaNac; 
     private Especializacion Especializacion;
-    private boolean DadoDeBaja;
+    private boolean estado;
 
     public Empleado(int idEmpleado, String Nombre, String Apellido, int dni, int Telefono, String direccion, LocalDate FechaNac) {
         this.id= idEmpleado;
@@ -30,7 +30,7 @@ public class Empleado {
         this.Telefono = Telefono;
         this.direccion = direccion;
         this.FechaNac = FechaNac;
-        this.DadoDeBaja=false;
+        this.estado=true;
     }
 
     public int getidEmpleado(){
@@ -96,12 +96,16 @@ public class Empleado {
         this.FechaNac = FechaNac;
     }
     
-    public void setDadoDeBaja(boolean unValor) {
-        this.DadoDeBaja = unValor;
+     public void setEstadoAlta() {
+        this.estado = true;
+    }
+    
+    public void setEstadoBaja() {
+        this.estado = false;
     }
 
     public boolean getDadoDeBaja() {
-        return this.DadoDeBaja;
+        return this.estado;
     }
 
     
