@@ -13,17 +13,17 @@ import java.time.LocalDate;
  */
 public class Especializacion {
     
-    int iD;
+    int id;
     Profesion tipo; 
     LocalDate fechaActualizacion; 
-    RolEmpleado Rol; 
+    RolEmpleado rol; 
     LocalDate fechaFin;
 
-    public Especializacion(int id, Profesion tipo, LocalDate fechaActualizacion, RolEmpleado Rol) {
-        this.iD = id;
+    public Especializacion(int id, Profesion tipo, LocalDate fechaActualizacion, RolEmpleado unRol) {
+        this.id = id;
         this.tipo = tipo;
         this.fechaActualizacion = fechaActualizacion;
-        this.Rol = Rol;
+        this.rol = unRol;
     }
 
     public Profesion getTipo() {
@@ -35,11 +35,11 @@ public class Especializacion {
     }
 
     public int getId(){
-        return iD;
+        return id;
     }
     
     public RolEmpleado getRol() {
-        return Rol;
+        return rol;
     }
 
     public LocalDate getFechaFin() {
@@ -58,8 +58,8 @@ public class Especializacion {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public void setRol(RolEmpleado Rol) {
-        this.Rol = Rol;
+    public void setRol(RolEmpleado unRol) {
+        this.rol = unRol;
     }
     
     
