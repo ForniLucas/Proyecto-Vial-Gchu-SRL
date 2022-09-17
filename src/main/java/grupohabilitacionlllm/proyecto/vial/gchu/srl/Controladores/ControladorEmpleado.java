@@ -34,14 +34,14 @@ List<Empleado> empleados= new ArrayList<>();
     
     public void bajaLogica(Empleado unEmpleado){
         int index;
-        //for (Empleado emp_temp:empleados){
-          //  if (emp_temp.equals(unEmpleado)){
+
         index= empleados.indexOf(unEmpleado);
-        empleados.get(index).setEstadoBaja();
+        unEmpleado.setEstadoBaja();
+        empleados.set(index, unEmpleado);
       
-           // }
+ 
         }
-               // (if empleados.equals(unEmpleado{index=empleados.}));
+
     }
             
 
