@@ -33,7 +33,7 @@ public class Empleado {
         this.estado=true;
     }
 
-    public int getidEmpleado(){
+    public int getId(){
         return this.id;
     }
     
