@@ -4,13 +4,13 @@ Desarrollo de Aplicacion de gestion para una empresa de movimiento de suelo,  te
 # Materia:
 * Habilitación profesional
 # Docentes:
-* 
-* 
+* Ing. Miriam Kloster.
+* Ing. Esp. M. Soledad Retamar.
 # Equipo:
 * Forni, Lucas          lucasfo1234@gmail.com
-* 
-* 
-* 
+* Lopez, Martin         tincho1597lopez@gmail.com
+* Valiente, Luciana     lucianagabrielavaliente@gmail.com
+* Thea, Lucía           luciabananita@gmail.com
 # Descripción de la Función
 * Gestión de Empleados:
 
