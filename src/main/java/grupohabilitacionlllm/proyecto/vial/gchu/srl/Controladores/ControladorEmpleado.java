@@ -34,14 +34,76 @@ List<Empleado> empleados= new ArrayList<>();
     
     public void bajaLogica(Empleado unEmpleado){
         int index;
-        //for (Empleado emp_temp:empleados){
-          //  if (emp_temp.equals(unEmpleado)){
-                index= empleados.indexOf(unEmpleado);
-                empleados.get(index).setEstadoBaja();
-            //    empleados.
-           // }
+
+        index= empleados.indexOf(unEmpleado);
+        unEmpleado.setEstadoBaja();
+        empleados.set(index, unEmpleado);
+      
+ 
         }
-               // (if empleados.equals(unEmpleado{index=empleados.}));
+    
+    public Empleado buscarId(int unId){
+        Empleado encontro=null;
+        
+        try{
+            for(Empleado emp_temp: empleados){
+                if(emp_temp.getId()==unId){
+                    encontro=emp_temp;
+                }
+            }
+            
+        }
+        catch (Exception e){
+            
+        }
+        return encontro;
+    }
+    
+    
+    public void modificar (Empleado unEmpleado){
+        try{
+
+        int index= empleados.indexOf(this.buscarId(unEmpleado.getId()));
+        empleados.set(index,unEmpleado);
+            
+        }catch(Exception e){
+            
+        }
+    }
+    
+    public Empleado buscarNombreYApellido(String unNombre, String unApellido){
+         Empleado encontro=null;
+        
+        try{
+            for(Empleado emp_temp: empleados){
+                if(emp_temp.verificarEmpleadoNombreyApellido(unNombre, unApellido)){
+                    encontro=emp_temp;
+                }
+            }
+            
+        }
+        catch (Exception e){
+            
+        }
+        return encontro;
+    }
+    public Empleado buscarDni(int unDni){
+         Empleado encontro=null;
+        
+        try{
+            for(Empleado emp_temp: empleados){
+                if(emp_temp.getDni()==(unDni)){
+                    encontro=emp_temp;
+                }
+            }
+            
+        }
+        catch (Exception e){
+            
+        }
+        return encontro;
+    }
+
     }
             
 

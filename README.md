@@ -1,5 +1,16 @@
+![logo-utn(1)](https://user-images.githubusercontent.com/70183535/190873516-80c3ce3f-310f-48bc-9a89-cd00ac7fbd6b.png)
 # Proyecto-Vial-Gchu
 Desarrollo de Aplicacion de gestion para una empresa de movimiento de suelo,  tendido de redes eléctricas,  aéreas y subterráneas y  construcción.
+# Materia:
+* Habilitación profesional
+# Docentes:
+* Ing. Miriam Kloster.
+* Ing. Esp. M. Soledad Retamar.
+# Equipo:
+* Forni, Lucas          lucasfo1234@gmail.com
+* Lopez, Martin         tincho1597lopez@gmail.com
+* Valiente, Luciana     lucianagabrielavaliente@gmail.com
+* Thea, Lucía           luciabananita@gmail.com
 # Descripción de la Función
 * Gestión de Empleados:
 
