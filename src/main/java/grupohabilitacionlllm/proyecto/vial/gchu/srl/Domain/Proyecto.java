@@ -18,13 +18,13 @@ public class Proyecto {
     LocalDate fechaInicio;
     LocalDate fechaEstmiadaFin;
     LocalDate fechaFin;
-    String estado;
+    boolean estado;
     String nombre;
     TipoProyecto tipodeProyecto; 
     List<Empleado> empleados;
     List<Maquinaria> maquinas;
 
-    public Proyecto(int id ,LocalDate fechaInicio, LocalDate fechaEstmiadaFin, LocalDate fechaFin, String estado, String nombre) {
+    public Proyecto(int id ,LocalDate fechaInicio, LocalDate fechaEstmiadaFin, LocalDate fechaFin, boolean estado, String nombre) {
         this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaEstmiadaFin = fechaEstmiadaFin;
@@ -65,11 +65,11 @@ public class Proyecto {
         this.fechaFin = fechaFin;
     }
 
-    public String getEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
 

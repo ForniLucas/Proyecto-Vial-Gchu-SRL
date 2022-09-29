@@ -51,6 +51,10 @@ public class Maquinaria {
     public String getFabricante() {
         return fabricante;
     }
+    
+    public int getId(){
+        return id;
+    }
 
     public void setFabricante(String fabricante) {
         this.fabricante = fabricante;

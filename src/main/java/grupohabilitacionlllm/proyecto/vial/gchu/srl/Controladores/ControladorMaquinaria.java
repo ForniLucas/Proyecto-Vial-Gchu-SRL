@@ -57,7 +57,27 @@ public class ControladorMaquinaria {
 
     }
 
-    public void baja() {
-
+    public Maquinaria buscarId(int id){
+        Maquinaria encontro = null;
+        
+        try {
+            for(Maquinaria maq_temp : maquinarias){
+                if (maq_temp.getId() == id){
+                    encontro = maq_temp;
+                }
+            }
+        } catch (Exception e) {
+        }
+        
+        return encontro;
+    }
+    
+    public void modificar(Maquinaria m) {
+        try {
+            int index = maquinarias.indexOf(this.buscarId(m.getId()));
+            maquinarias.set(index, m);
+            
+        } catch (Exception e) {
+        }
     }
 }
