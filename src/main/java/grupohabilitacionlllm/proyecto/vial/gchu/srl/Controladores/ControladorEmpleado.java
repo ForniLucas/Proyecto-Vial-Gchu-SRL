@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Tincho
  */
-public class ControladorEmpleado {
+public class ControladorEmpleado{
 private int ids;
 List<Empleado> empleados= new ArrayList<>();
 
@@ -103,6 +103,8 @@ List<Empleado> empleados= new ArrayList<>();
         }
         return encontro;
     }
+
+  
 
     }
             
