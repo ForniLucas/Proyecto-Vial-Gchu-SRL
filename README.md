@@ -46,4 +46,4 @@ El pago de los proyectos lo reciben gradualmente conforme se ven los avances del
 
 De las obras finalizadas El actor guarda datos técnicos como pueden ser modelos de bases, profundidad de palos/postes, blindaje de cables, para poder consultarlos en caso de ser necesario, pueden ser accedidos por el dueño de El actor,el capataz de obra, el ingeniero que se contrata para el trabajo y el técnico de seguridad. 
 
-A mano se registran los costos asociados a este
+A mano se registran los costos asociados a este.
