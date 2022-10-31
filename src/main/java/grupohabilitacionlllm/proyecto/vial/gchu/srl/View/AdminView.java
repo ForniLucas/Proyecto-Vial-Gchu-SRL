@@ -3,13 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.View;
-
+import grupohabilitacionlllm.proyecto.vial.gchu.srl.Controladores.ControladorEmpleado;
+import grupohabilitacionlllm.proyecto.vial.gchu.srl.Controladores.ControladorMaquinaria;
+import grupohabilitacionlllm.proyecto.vial.gchu.srl.Controladores.ControladorProyecto;
 /**
  *
  * @author lucia
  */
 public class AdminView extends javax.swing.JFrame {
-
+ControladorEmpleado controladorEmpleado = new ControladorEmpleado();
+ControladorMaquinaria controladorMaquinaria = new ControladorMaquinaria();
+ControladorProyecto controladorProyecto = new ControladorProyecto();
     /**
      * Creates new form main
      */
@@ -130,6 +134,14 @@ public class AdminView extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         proyectoMenuBar = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        altaProyectoDialog = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        altaDeEmpleadosLabel3 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         mainTitle = new javax.swing.JLabel();
         mainsalirButton = new javax.swing.JButton();
         empleadoButton = new javax.swing.JButton();
@@ -214,7 +226,7 @@ public class AdminView extends javax.swing.JFrame {
         jAltaItem.setText("Agregar empleado");
         jAltaItem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jAltaItemMouseClicked(evt);
+                altaEmpleadoItemMouseClicked(evt);
             }
         });
         jAltaItem.addActionListener(new java.awt.event.ActionListener() {
@@ -933,8 +945,6 @@ public class AdminView extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        proyectoDialog.setPreferredSize(new java.awt.Dimension(930, 760));
-
         altaDeEmpleadosLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         altaDeEmpleadosLabel2.setText("Gestión de Proyectos");
 
@@ -942,18 +952,38 @@ public class AdminView extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Fecha de Inicio", "Fecha Estimada", "Estado", "Nombe", "Fecha de Fin", "Tipo"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane6.setViewportView(jTable1);
 
         jMenu4.setText("Opciones");
+
+        jMenuItem1.setText("Crear proyecto");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem1);
+
+        jMenuItem6.setText("Editar proyecto");
+        jMenu4.add(jMenuItem6);
+
         proyectoMenuBar.add(jMenu4);
 
         proyectoDialog.setJMenuBar(proyectoMenuBar);
@@ -967,11 +997,14 @@ public class AdminView extends javax.swing.JFrame {
                 .addComponent(altaDeEmpleadosLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, proyectoDialogLayout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addGroup(proyectoDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addGroup(proyectoDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, proyectoDialogLayout.createSequentialGroup()
+                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, proyectoDialogLayout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))))
         );
         proyectoDialogLayout.setVerticalGroup(
             proyectoDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -983,6 +1016,57 @@ public class AdminView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(jToggleButton1)
                 .addGap(18, 18, 18))
+        );
+
+        altaDeEmpleadosLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        altaDeEmpleadosLabel3.setText("Alta de Empleado");
+
+        jLabel12.setText("Fecha de inicio");
+
+        jLabel13.setText("Fecha estimada de fin");
+
+        jLabel14.setText("Estado");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(316, 316, 316)
+                        .addComponent(altaDeEmpleadosLabel3))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(316, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(altaDeEmpleadosLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel12)
+                .addGap(41, 41, 41)
+                .addComponent(jLabel13)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel14)
+                .addContainerGap(569, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout altaProyectoDialogLayout = new javax.swing.GroupLayout(altaProyectoDialog.getContentPane());
+        altaProyectoDialog.getContentPane().setLayout(altaProyectoDialogLayout);
+        altaProyectoDialogLayout.setHorizontalGroup(
+            altaProyectoDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        altaProyectoDialogLayout.setVerticalGroup(
+            altaProyectoDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1119,7 +1203,8 @@ public class AdminView extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void empleadoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empleadoButtonMouseClicked
-        //empleadoDialog().SetVisible(true);
+        empleadoDialog.setVisible(true);
+        empleadoDialog.setLocationRelativeTo(this);
     }//GEN-LAST:event_empleadoButtonMouseClicked
 
     private void bajaEmpleadoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bajaEmpleadoButtonMouseClicked
@@ -1150,9 +1235,10 @@ public class AdminView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void jAltaItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jAltaItemMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jAltaItemMouseClicked
+    private void altaEmpleadoItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_altaEmpleadoItemMouseClicked
+        altaEmpleadoDialog.setVisible(true);
+        altaEmpleadoDialog.setLocationRelativeTo(this);
+    }//GEN-LAST:event_altaEmpleadoItemMouseClicked
 
     private void BajaItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BajaItemMouseClicked
         // TODO add your handling code here:
@@ -1193,6 +1279,10 @@ public class AdminView extends javax.swing.JFrame {
     private void cerrarEmpleadoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarEmpleadoButtonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_cerrarEmpleadoButtonMouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1238,7 +1328,9 @@ public class AdminView extends javax.swing.JFrame {
     private javax.swing.JLabel altaDeEmpleadosLabel;
     private javax.swing.JLabel altaDeEmpleadosLabel1;
     private javax.swing.JLabel altaDeEmpleadosLabel2;
+    private javax.swing.JLabel altaDeEmpleadosLabel3;
     private javax.swing.JDialog altaEmpleadoDialog;
+    private javax.swing.JDialog altaProyectoDialog;
     private javax.swing.JLabel apellidoLabel;
     private javax.swing.JLabel apellidoLabel1;
     private javax.swing.JTextField apellidoTextField;
@@ -1285,6 +1377,9 @@ public class AdminView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1299,13 +1394,16 @@ public class AdminView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
