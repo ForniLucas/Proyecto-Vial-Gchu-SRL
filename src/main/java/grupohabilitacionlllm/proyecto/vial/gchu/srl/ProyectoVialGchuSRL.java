@@ -5,6 +5,9 @@
 
 package grupohabilitacionlllm.proyecto.vial.gchu.srl;
 
+import javax.swing.JFrame;
+import grupohabilitacionlllm.proyecto.vial.gchu.srl.View.AdminView;
+
 /**
  *
  * @author lucas
@@ -12,6 +15,14 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl;
 public class ProyectoVialGchuSRL {
 
     public static void main(String[] args) {
-        System.out.println("Hello lucas!");
+        AdminView ventana = new AdminView();
+        ventana.setSize(670,500);
+        ventana.setVisible(true);
+        JFrame jf= new JFrame();        //JFrame me permite ejecutar la ventana.
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(990,570);
+        jf.add(ventana);
+        jf.setVisible(true);
+        jf.setLocationRelativeTo(null);
     }
 }
