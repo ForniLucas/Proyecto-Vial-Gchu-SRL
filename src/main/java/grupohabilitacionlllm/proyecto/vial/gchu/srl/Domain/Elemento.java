@@ -8,6 +8,7 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
  *
  * @author Tincho
  */
+
 public enum Elemento {
     cascoSeguridad,
     gorroLegionario,
