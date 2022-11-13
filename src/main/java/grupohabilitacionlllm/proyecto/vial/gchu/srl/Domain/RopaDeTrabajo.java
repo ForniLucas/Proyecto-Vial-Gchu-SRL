@@ -4,7 +4,7 @@
  */
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
-import Enumeraciones.Ropa;
+import grupohabilitacionlllm.proyecto.vial.gchu.srl.Enumeraciones.Ropa;
 import java.time.LocalDate;
 
 /**

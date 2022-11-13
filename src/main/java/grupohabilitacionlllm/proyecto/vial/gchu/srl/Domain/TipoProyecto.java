@@ -4,7 +4,7 @@
  */
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
-import Enumeraciones.TipoDeProyecto;
+import grupohabilitacionlllm.proyecto.vial.gchu.srl.Enumeraciones.TipoDeProyecto;
 
 /**
  *

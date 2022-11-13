@@ -5,8 +5,8 @@
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
 
-import Enumeraciones.Profesion;
-import Enumeraciones.RolEmpleado;
+import grupohabilitacionlllm.proyecto.vial.gchu.srl.Enumeraciones.Profesion;
+import grupohabilitacionlllm.proyecto.vial.gchu.srl.Enumeraciones.RolEmpleado;
 import java.time.LocalDate;
 
 /**
