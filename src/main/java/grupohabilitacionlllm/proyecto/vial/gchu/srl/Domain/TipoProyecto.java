@@ -4,6 +4,8 @@
  */
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
+import Enumeraciones.TipoDeProyecto;
+
 /**
  *
  * @author Tincho
