@@ -40,21 +40,22 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-    <property name="hibernate.connection.url">jdbc:postgresql://(Nuestro Server)/Vial Gchu SRL</property>
-    <property name="hibernate.connection.username">postgres</property>
-    <property name="hibernate.connection.password">Silver2020Bonito</property>
-    <mapping class="Entidades.Cliente"/>
-    <mapping class="Entidades.Persona"/>
-    <mapping class="Entidades.Marca"/>
-    <mapping class="Entidades.Pago"/>
-    <mapping class="Entidades.Auto"/>
-    <mapping class="Entidades.Vendedor"/>
-    <mapping class="Entidades.Automovil"/>
-    <mapping class="Entidades.Usuario"/>
-    <mapping class="Entidades.Venta"/>
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://babar.db.elephantsql.com/Vial Gchu SRL</property>
+        <property name="hibernate.connection.username">xomyyxer</property>
+        <property name="hibernate.connection.password">E6Lho3bo9XKNodUTWoh-6hOAnpcGfh8y</property>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.ElementoDeSeguridad"/>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.Empleado"/>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.Especializacion"/>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.Maquinaria"/>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.Proyecto"/>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.RopaDeTrabajo"/>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.Service"/>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.TipoProyecto"/>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.Trabajo"/>
+        <mapping class="grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain.Utiliza"/>
+    </session-factory>
 </hibernate-configuration>
 

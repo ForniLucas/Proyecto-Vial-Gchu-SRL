@@ -40,14 +40,15 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-reverse-engineering>
-  <schema-selection match-catalog="Vial_Gchu_SRL" match-schema="public"/>
-  <table-filter match-name="vendedor"/>
-  <table-filter match-name="automovil"/>
-  <table-filter match-name="persona"/>
-  <table-filter match-name="marca"/>
-  <table-filter match-name="cliente"/>
-  <table-filter match-name="usuario"/>
-  <table-filter match-name="auto"/>
-  <table-filter match-name="venta"/>
-  <table-filter match-name="pago"/>
+    <schema-selection match-catalog="Vial_Gchu_SRL" match-schema="public"/>
+    <table-filter match-name="ElementoDeSeguridad"/>
+    <table-filter match-name="Empleado"/>
+    <table-filter match-name="Especializacion"/>
+    <table-filter match-name="Maquinaria"/>
+    <table-filter match-name="Proyecto"/>
+    <table-filter match-name="RopaDeTrabajo"/>
+    <table-filter match-name="Service"/>
+    <table-filter match-name="TipoProyecto"/>
+    <table-filter match-name="Trabajo"/>
+    <table-filter match-name="Utiliza"/>
 </hibernate-reverse-engineering>
