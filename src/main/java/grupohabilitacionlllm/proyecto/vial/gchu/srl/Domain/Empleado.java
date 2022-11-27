@@ -6,38 +6,54 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
 import java.time.LocalDate;
 import java.time.Period;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author Tincho
  */
-public class Empleado {
-    private int id;
+@Entity
+@Table(name = "Empleado",
+        schema = "public")
+
+public class Empleado implements java.io.Serializable {
+
+    @Id
+    private final int id;
+
     private String Nombre;
+
     private String Apellido;
+
     private int dni;
+
     private int Telefono;
+
     private String direccion;
-    private LocalDate FechaNac; 
+
+    private LocalDate FechaNac;
+    
     private Especializacion Especializacion;
+    
     private boolean estado;
 
     public Empleado(int idEmpleado, String nombre, String apellido, int dni, int telefono, String direccion, LocalDate fechaNac) {
-        this.id= idEmpleado;
+        this.id = idEmpleado;
         this.Nombre = nombre;
         this.Apellido = apellido;
         this.dni = dni;
         this.Telefono = telefono;
         this.direccion = direccion;
         this.FechaNac = fechaNac;
-        this.estado=true;
+        this.estado = true;
     }
 
-    public int getId(){
+    public int getId() {
         return this.id;
     }
-    
-    
+
     public String getNombre() {
         return Nombre;
     }
@@ -81,25 +97,21 @@ public class Empleado {
     public LocalDate getFechaNac() {
         return FechaNac;
     }
-    
-    
-    
-    
-    
+
     public int getEdad() {
-        return Period.between(FechaNac, LocalDate.now()).getYears(); 
-    // Utilizamos la libreria Period de JAVA, que maneja tipos Date y obtubimos 
-    // el tiempo entre la fechad de nacimiento y la actual para luego calcular la cantida de años.
+        return Period.between(FechaNac, LocalDate.now()).getYears();
+        // Utilizamos la libreria Period de JAVA, que maneja tipos Date y obtubimos 
+        // el tiempo entre la fechad de nacimiento y la actual para luego calcular la cantida de años.
     }
 
     public void setFechaNac(LocalDate FechaNac) {
         this.FechaNac = FechaNac;
     }
-    
-     public void setEstadoAlta() {
+
+    public void setEstadoAlta() {
         this.estado = true;
     }
-    
+
     public void setEstadoBaja() {
         this.estado = false;
     }
@@ -108,44 +120,39 @@ public class Empleado {
         return this.estado;
     }
 
-    
     public boolean verificarEmpleadoDNI(int unDNI) {
         return (unDNI == this.dni);
     }
-            
-    public boolean verificarEmpleadoNombreyApellido(String unNombre, String unApellido){
+
+    public boolean verificarEmpleadoNombreyApellido(String unNombre, String unApellido) {
         return ((unNombre.equals(this.Nombre)) && (unApellido.equals(this.Apellido)));
-       
-    }
-    
-    public void setEspecializacion (Especializacion unaEspecializacion){
-       
-        if (this.Especializacion== null) {
-              // block of code to be executed if the condition is true
-             this.Especializacion= unaEspecializacion;
-}
-        else {
-            // block of code to be executed if the condition is false
-            this.finalizarEspecializacion(LocalDate.now());
-            this.Especializacion=unaEspecializacion;
-}
 
     }
-    
-    
-   
-    public void finalizarEspecializacion(LocalDate unDia){
-        this.Especializacion.fechaFin=unDia;
-    }
-    
-    public void modificarEmpleado(Empleado unEmpleado){
-        this.Apellido= unEmpleado.Apellido;
-        this.Nombre= unEmpleado.Nombre;
-        this.dni= unEmpleado.dni;
-        this.direccion= unEmpleado.direccion;
-        this.FechaNac=unEmpleado.FechaNac;
-        this.Telefono= unEmpleado.Telefono;
-        
+
+    public void setEspecializacion(Especializacion unaEspecializacion) {
+
+        if (this.Especializacion == null) {
+            // block of code to be executed if the condition is true
+            this.Especializacion = unaEspecializacion;
+        } else {
+            // block of code to be executed if the condition is false
+            this.finalizarEspecializacion(LocalDate.now());
+            this.Especializacion = unaEspecializacion;
         }
+
+    }
+
+    public void finalizarEspecializacion(LocalDate unDia) {
+        this.Especializacion.fechaFin = unDia;
+    }
+
+    public void modificarEmpleado(Empleado unEmpleado) {
+        this.Apellido = unEmpleado.Apellido;
+        this.Nombre = unEmpleado.Nombre;
+        this.dni = unEmpleado.dni;
+        this.direccion = unEmpleado.direccion;
+        this.FechaNac = unEmpleado.FechaNac;
+        this.Telefono = unEmpleado.Telefono;
+
+    }
 }
-    

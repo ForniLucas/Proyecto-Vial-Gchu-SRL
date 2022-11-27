@@ -6,16 +6,29 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
 
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author Tincho
  */
-public class Service {
-    
+
+@Entity
+@Table(name = "Service",
+        schema = "public")
+public class Service implements java.io.Serializable{
+    @Id
     int id;
+    
+    @Column(name = "Incio")
     LocalDate fechaInicio;
+    
+    @Column(name = "Fin")
     LocalDate fechaFin;
+    @Column(name = "Observaciones")
     String observaciones;
 
     public Service(int id, LocalDate fechaInicio, LocalDate fechaFin, String observaciones) {

@@ -4,21 +4,34 @@
  */
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
-
 import grupohabilitacionlllm.proyecto.vial.gchu.srl.Enumeraciones.Profesion;
 import grupohabilitacionlllm.proyecto.vial.gchu.srl.Enumeraciones.RolEmpleado;
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author Tincho
  */
-public class Especializacion {
-    
+@Entity
+@Table(name = "Especialización",
+        schema = "public")
+public class Especializacion implements java.io.Serializable {
+
+    @Id
     int id;
-    Profesion tipo; 
-    LocalDate fechaActualizacion; 
-    RolEmpleado rol; 
+    Profesion tipo;
+
+    @Column(name = "Actualización")
+    LocalDate fechaActualizacion;
+
+    @Column(name = "Rol")
+    RolEmpleado rol;
+
+    @Column(name = "Fin")
     LocalDate fechaFin;
 
     public Especializacion(int id, Profesion tipo, LocalDate fechaActualizacion, RolEmpleado unRol) {
@@ -36,10 +49,10 @@ public class Especializacion {
         return fechaActualizacion;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
-    
+
     public RolEmpleado getRol() {
         return rol;
     }
@@ -63,8 +76,5 @@ public class Especializacion {
     public void setRol(RolEmpleado unRol) {
         this.rol = unRol;
     }
-    
-    
 
-    
 }

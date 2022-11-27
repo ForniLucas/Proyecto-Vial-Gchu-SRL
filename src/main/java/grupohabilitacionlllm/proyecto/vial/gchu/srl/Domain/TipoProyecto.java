@@ -5,17 +5,31 @@
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
 import grupohabilitacionlllm.proyecto.vial.gchu.srl.Enumeraciones.TipoDeProyecto;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 /**
  *
  * @author Tincho
  */
-public class TipoProyecto {
-    
+@Entity
+@Table(name = "TipoProyecto",
+        schema = "public")
+public class TipoProyecto implements java.io.Serializable{
+    @Id
     int id;
+    
+    @Column(name = "Tipo")
     TipoDeProyecto tipo;
+    
+    @Column(name = "Descripción")
     String descripcion;
+    
+    @Column(name = "Actividades")
     String actividades;
+    
+    @Column(name = "Insumos")
     String insumos;
 
     public TipoProyecto(int id, TipoDeProyecto tipo, String descripcion, String actividades, String insumos) {
@@ -25,6 +39,15 @@ public class TipoProyecto {
         this.actividades = actividades;
         this.insumos = insumos;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     public TipoDeProyecto getTipo() {
         return tipo;

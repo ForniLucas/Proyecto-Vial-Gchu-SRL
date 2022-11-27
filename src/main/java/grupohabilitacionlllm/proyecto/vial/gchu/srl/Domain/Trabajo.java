@@ -5,13 +5,19 @@
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
 import java.time.LocalDate;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 /**
  *
  * @author Tincho
  */
-public class Trabajo {
-    
+@Entity
+@Table(name = "Trabajo",
+        schema = "public")
+public class Trabajo implements java.io.Serializable{
+//Ver de poner los ids 
     int idProyecto;
     int idEmpleado;
     int horasDeTrabajo;

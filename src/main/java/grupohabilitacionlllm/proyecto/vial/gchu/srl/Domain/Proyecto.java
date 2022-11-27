@@ -4,43 +4,54 @@
  */
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
-
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  *
  * @author Tincho
  */
-public class Proyecto {
+@Entity
+@Table(name = "Proyecto",
+        schema = "public")
+
+public class Proyecto implements java.io.Serializable{
+
+    @Id
     int id;
+    String nombre;
+    @Column(name = "Inicio")
     LocalDate fechaInicio;
+    @Column(name = "Fin Estimado")
     LocalDate fechaEstmiadaFin;
+    @Column(name = "Fin Efectivo")
     LocalDate fechaFin;
     boolean estado;
-    String nombre;
-    TipoProyecto tipodeProyecto; 
+    TipoProyecto tipodeProyecto;
     List<Empleado> empleados;
     List<Maquinaria> maquinas;
 
-    public Proyecto(int id ,LocalDate fechaInicio, LocalDate fechaEstmiadaFin, LocalDate fechaFin, boolean estado, String nombre) {
+    public Proyecto(int id, LocalDate fechaInicio, LocalDate fechaEstmiadaFin, LocalDate fechaFin, boolean estado, String nombre) {
         this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaEstmiadaFin = fechaEstmiadaFin;
         this.fechaFin = fechaFin;
         this.estado = estado;
         this.nombre = nombre;
-        
+
         empleados = new LinkedList<>();
         maquinas = new LinkedList<>();
     }
 
-    
-    public int getId(){
+    public int getId() {
         return id;
     }
-    
+
     public LocalDate getFechaInicio() {
         return fechaInicio;
     }
@@ -80,33 +91,30 @@ public class Proyecto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    public TipoProyecto getTipoProyecto(){
+
+    public TipoProyecto getTipoProyecto() {
         return this.tipodeProyecto;
     }
-    
-    public void asignarTipoProyecto (TipoProyecto unTipoProyecto){
-         
-         this.tipodeProyecto = unTipoProyecto;
+
+    public void asignarTipoProyecto(TipoProyecto unTipoProyecto) {
+
+        this.tipodeProyecto = unTipoProyecto;
     }
-    
-    
-    public void asignarEmpleado(Empleado unEmpleado){
+
+    public void asignarEmpleado(Empleado unEmpleado) {
         empleados.add(unEmpleado);
     }
 
-    public List<Empleado> getEmpleados(){
+    public List<Empleado> getEmpleados() {
         return empleados;
     }
-    
-    
-    public void asignar(Maquinaria unaMaquinaria){
+
+    public void asignar(Maquinaria unaMaquinaria) {
         maquinas.add(unaMaquinaria);
     }
-    
+
     public List<Maquinaria> getMaquinas() {
         return maquinas;
     }
-    
-    
+
 }

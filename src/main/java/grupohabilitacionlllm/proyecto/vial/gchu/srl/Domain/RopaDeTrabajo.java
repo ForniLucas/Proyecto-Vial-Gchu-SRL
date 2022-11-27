@@ -6,18 +6,29 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
 import grupohabilitacionlllm.proyecto.vial.gchu.srl.Enumeraciones.Ropa;
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  *
  * @author Tilo
  */
-public class RopaDeTrabajo {
+@Entity
+@Table(name = "RopaDeTrabajo",
+        schema = "public")
+public class RopaDeTrabajo implements java.io.Serializable{
 
+    @Id
     int id;
-    Ropa tipo;
-    short talle;
-    LocalDate fechaEntrega;
+    @Column(name = "Empleado")
     Empleado Empleado;
+    Ropa tipo;
+    
+    short talle;
+    @Column(name = "Entrega")
+    LocalDate fechaEntrega;
 
     public RopaDeTrabajo(int id, Ropa tipo, short talle, LocalDate fechaEntrega) {
         this.id = id;
@@ -37,8 +48,8 @@ public class RopaDeTrabajo {
     public Ropa getTipo() {
         return tipo;
     }
-    
-    public int getId(){
+
+    public int getId() {
         return id;
     }
 

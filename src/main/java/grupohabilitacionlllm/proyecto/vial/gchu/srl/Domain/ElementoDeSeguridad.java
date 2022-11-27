@@ -6,18 +6,28 @@ package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
 import grupohabilitacionlllm.proyecto.vial.gchu.srl.Enumeraciones.Elemento;
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author lucas
  */
-public class ElementoDeSeguridad {
-    
+@Entity
+@Table(name = "Elemento de Seguridad",
+        schema = "public")
+public class ElementoDeSeguridad implements java.io.Serializable {
+
+    @Id
     int iD;
+
     Elemento tipo;
+    @Column(name = "Entrega")
     LocalDate fechaEntrega;
     Empleado Empleado;
-    
+
     public ElementoDeSeguridad(int iD, Elemento tipo, LocalDate fechaEntrega, Empleado Empleado) {
         this.iD = iD;
         this.tipo = tipo;
@@ -52,5 +62,5 @@ public class ElementoDeSeguridad {
     public void setFechaEntrega(LocalDate fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
     }
-    
+
 }

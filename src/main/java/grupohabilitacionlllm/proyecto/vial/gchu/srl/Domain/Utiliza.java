@@ -1,10 +1,16 @@
 package grupohabilitacionlllm.proyecto.vial.gchu.srl.Domain;
 
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
-public class Utiliza {
-    
+@Entity
+@Table(name = "Utiliza",
+        schema = "public")
+public class Utiliza implements java.io.Serializable{
+ //Ver de poner los ids    
     int idProjecto;
     int idMaquinaria;
     LocalDate fechaInicio;
